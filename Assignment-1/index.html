@@ -6,73 +6,77 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Smart Event Dashboard</h1>
+  <header>
+    <h1>Smart Event Dashboard</h1>
+  </header>1>
 
-  <div class="top-wrapper">
-    <!-- Add New Event -->
-    <div class="box" id="add-box">
-      <h2>Add New Event</h2>
-      <form id="eventForm">
-        <label>
-          Title:
-          <input type="text" name="title" required>
-        </label>
-        <label>
-          Date:
-          <input type="date" name="date" required>
-        </label>
-        <label>
-            Category:
-            <select name="catogary" required>
-              <option value="">-- Select Category --</option>
-              <option value="Work">Work</option>
-              <option value="Personal">Personal</option>
-              <option value="Meeting">Meeting</option>
-              <option value="Party">Party</option>
-              <option value="Birthday">Birthday</option>
-              <option value="Workshop">Workshop</option>
-            </select>
-        </label>
-        <label>
-          Description:
-          <textarea name="discription" rows="3" required></textarea>
-        </label>
-        <button type="submit">Add Event</button>
-      </form>
-    </div>
+  <main>
+    <section class="top-wrapper">
+      <!-- Add New Event -->
+      <div class="box" id="add-box">
+        <h2>Add New Event</h2>
+        <form id="eventForm">
+          <label>
+            Title:
+            <input type="text" name="title" required>
+          </label>
+          <label>
+            Date:
+            <input type="date" name="date" required>
+          </label>
+          <label>
+              Category:
+              <select name="catogary" required>
+                <option value="">-- Select Category --</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Meeting">Meeting</option>
+                <option value="Party">Party</option>
+                <option value="Birthday">Birthday</option>
+                <option value="Workshop">Workshop</option>
+              </select>
+          </label>
+          <label>
+            Description:
+            <textarea name="discription" rows="3" required></textarea>
+          </label>
+          <button type="submit">Add Event</button>
+        </form>
+      </div>
 
-    <!-- My Events -->
-    <div class="box" id="events-box">
-      <div class="events-header">
-        <h2>My Events</h2>
-        <div>
-          <button id="addSampleBtn" type="button">Add Sample Event</button>
-          <button id="clearAllBtn" type="button">Clear All Events</button>
+      <!-- My Events -->
+      <div class="box" id="events-box">
+        <div class="events-header">
+          <h2>My Events</h2>
+          <div>
+            <button id="addSampleBtn" type="button">Add Sample Event</button>
+            <button id="clearAllBtn" type="button">Clear All Events</button>
+          </div>
+        </div>
+        <div id="eventsContainer">
+          <p class="placeholder">No events yet. Add your first event!</p>
         </div>
       </div>
-      <div id="eventsContainer">
-        <p class="placeholder">No events yet. Add your first event!</p>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- DOM Manipulation Demo -->
-  <div class="box" id="demo-box">
-    <h2>DOM Manipulation Demo</h2>
+    <!-- DOM Manipulation Demo -->
+    <section class="box" id="demo-box">
+      <h2>DOM Manipulation Demo</h2>
 
-    <p><strong>innerText vs innerHTML vs textContent</strong></p>
+      <p><strong>innerText vs innerHTML vs textContent</strong></p>
 
-    <p>
-      OriginalHtml:
-      <span id="originalHtml"><strong>Bold Text</strong> with spaces</span>
-    </p>
-    <p>innerHTML: <span id="innerHTMLDemo"></span></p>
-    <p>innerText: <span id="innerTextDemo"></span></p>
-    <p>textContent: <span id="textContentDemo"></span></p>
+      <p>
+        OriginalHtml:
+        <span id="originalHtml"><strong>Bold Text</strong> with spaces</span>
+      </p>
+      <p>innerHTML: <span id="innerHTMLDemo"></span></p>
+      <p>innerText: <span id="innerTextDemo"></span></p>
+      <p>textContent: <span id="textContentDemo"></span></p>
 
-    <p id="keyPressInfo">You pressed: Shift</p>
-  </div>
+      <p id="keyPressInfo">You pressed: Shift</p>
+    </section>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
+  </main>
 </body>
 </html>
