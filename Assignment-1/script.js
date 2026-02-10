@@ -24,3 +24,43 @@ function removePlaceholder() {
 }
 
 showPlaceholderIfEmpty();
+
+function createEventCard(obj) {
+  const eachCard = document.createElement("div");
+  eachCard.classList.add("eachCard");
+
+  eachCard.innerHTML = `
+    <div class="eachCardTitle">${obj.title}</div>
+    <div class="eachCardDate">Date: ${obj.date}</div>
+    <div class="eachCardCategory">Category: ${obj.cotagory}</div>
+    <div class="eachCardDesc">${obj.Discription}</div>
+    <button class="deleteBtn">Delete</button>
+  `;
+
+  const deleteBtn = eachCard.querySelector(".deleteBtn");
+  deleteBtn.addEventListener("click", function () {
+    eachCard.remove();
+    if (eventsContainer.children.length === 0) {
+      showPlaceholderIfEmpty();
+    }
+  });
+
+  return eachCard;
+}
+
+function eventSubmitHandler(event) {
+  event.preventDefault();
+
+  formObj.title = event.target.title.value;
+  formObj.date = event.target.date.value;
+  formObj.cotagory = event.target.catogary.value;
+  formObj.Discription = event.target.discription.value;
+
+  const card = createEventCard(formObj);
+  removePlaceholder();
+  eventsContainer.appendChild(card);
+
+  event.target.reset();
+}
+
+eventForm.addEventListener("submit", eventSubmitHandler);
