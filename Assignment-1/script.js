@@ -64,3 +64,44 @@ function eventSubmitHandler(event) {
 }
 
 eventForm.addEventListener("submit", eventSubmitHandler);
+
+const addSampleBtn = document.getElementById("addSampleBtn");
+const clearAllBtn = document.getElementById("clearAllBtn");
+
+// DOM demo elements
+const originalHtml = document.getElementById("originalHtml");
+const innerHTMLDemo = document.getElementById("innerHTMLDemo");
+const innerTextDemo = document.getElementById("innerTextDemo");
+const textContentDemo = document.getElementById("textContentDemo");
+const keyPressInfo = document.getElementById("keyPressInfo");
+
+addSampleBtn.addEventListener("click", function () {
+  formObj = {
+    title: "Sample Event",
+    date: "2026-02-20",
+    cotagory: "Workshop",
+    Discription: "This is a sample event created with basic DOM."
+  };
+
+  const card = createEventCard(formObj);
+  removePlaceholder();
+  eventsContainer.appendChild(card);
+});
+
+clearAllBtn.addEventListener("click", function () {
+  eventsContainer.innerHTML = "";
+  showPlaceholderIfEmpty();
+});
+
+function initDomDemo() {
+  innerHTMLDemo.innerHTML = originalHtml.innerHTML;
+  innerTextDemo.innerText = originalHtml.innerHTML;
+  textContentDemo.textContent = originalHtml.innerHTML;
+}
+
+document.addEventListener("keydown", function (e) {
+  keyPressInfo.textContent = "You pressed: " + e.key;
+});
+
+initDomDemo();
+
