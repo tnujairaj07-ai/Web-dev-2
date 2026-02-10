@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Smart Event Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <h1>Smart Event Dashboard</h1>
@@ -40,15 +41,34 @@
 
 
     <div class="box" id="events-box">
-      <h2>My Events</h2>
+      <div class="events-header">
+        <h2>My Events</h2>
+        <div>
+          <button id="addSampleBtn" type="button">Add Sample Event</button>
+          <button id="clearAllBtn" type="button">Clear All Events</button>
+        </div>
+      </div>
       <div id="eventsContainer">
         <p class="placeholder">No events yet. Add your first event!</p>
       </div>
     </div>
-  </div>
 
-  <div class="box" id="demo-box">
-    <h2>DOM Manipulation Demo</h2>
+    <div class="box" id="demo-box">
+      <h2>DOM Manipulation Demo</h2>
+
+      <p><strong>innerText vs innerHTML vs textContent</strong></p>
+
+      <p>
+        OriginalHtml:
+        <span id="originalHtml"><strong>Bold Text</strong> with spaces</span>
+      </p>
+      <p>innerHTML: <span id="innerHTMLDemo"></span></p>
+      <p>innerText: <span id="innerTextDemo"></span></p>
+      <p>textContent: <span id="textContentDemo"></span></p>
+
+      <p id="keyPressInfo">You pressed: Shift</p>
+    </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
