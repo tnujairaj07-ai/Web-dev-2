@@ -61,6 +61,7 @@ function eventSubmitHandler(event) {
   eventsContainer.appendChild(card);
 
   event.target.reset();
+  event.target.title.focus();
 }
 
 eventForm.addEventListener("submit", eventSubmitHandler);
