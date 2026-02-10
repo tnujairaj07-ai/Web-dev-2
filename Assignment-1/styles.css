@@ -1,0 +1,35 @@
+/* Assignment-1/styles.css */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+  background-color: #f2f6ff;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0b3c8a;
+}
+
+.top-wrapper {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.box {
+  border: 1px solid #99b3ff;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#add-box {
+  width: 35%;
+}
+
+#events-box {
+  width: 60%;
+}
