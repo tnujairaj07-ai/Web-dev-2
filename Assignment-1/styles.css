@@ -102,3 +102,64 @@ h1 {
   background-color: #b71c1c;
 }
 
+#eventsContainer {
+  min-height: 80px;
+}
+
+.placeholder {
+  color: #5c6f99;
+  font-style: italic;
+}
+
+.eachCard {
+  border: 1px solid #c0d0ff;
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: #f7f9ff;
+  border-radius: 4px;
+}
+
+.eachCardTitle {
+  font-weight: bold;
+  color: #0b3c8a;
+}
+
+.eachCardDate,
+.eachCardCategory {
+  font-size: 13px;
+  color: #42537a;
+}
+
+.eachCardDesc {
+  margin-top: 4px;
+}
+
+.deleteBtn {
+  margin-top: 6px;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 3px;
+  border: none;
+  background-color: #e53935;
+  color: white;
+  cursor: pointer;
+}
+
+#demo-box h2 {
+  margin-top: 0;
+  color: #0b3c8a;
+}
+
+#originalHtml,
+#innerHTMLDemo,
+#innerTextDemo,
+#textContentDemo {
+  padding: 2px 4px;
+  background-color: #eef2ff;
+  border-radius: 3px;
+}
+
+#keyPressInfo {
+  margin-top: 10px;
+  color: #0b3c8a;
+}
