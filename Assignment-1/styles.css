@@ -29,6 +29,17 @@ h1 {
   width: 35%;
 }
 
+@media (max-width: 768px) {
+  .top-wrapper {
+    flex-direction: column;
+  }
+
+  #add-box,
+  #events-box {
+    width: 100%;
+  }
+}
+
 #events-box {
   width: 60%;
 }
