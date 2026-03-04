@@ -1,3 +1,5 @@
+ const API_KEY = '02d66a22abef2536b3ce8d7a6a3ea548'; 
+
 // Custom console log (UI + browser console)
 function log(message, type = 'sync') {
     const consoleDiv = document.getElementById('console');
