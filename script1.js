@@ -63,3 +63,32 @@ function fetchWeatherPromise(city) {
             return response.json();
         });
 }
+
+// Main async weather function (async/await)
+async function searchWeather(city) {
+    log(`3. searchWeather('${city}') - sync function start`, 'sync');
+
+    const weatherContent = document.getElementById('weatherContent');
+    const errorDiv = document.getElementById('errorMsg');
+
+    // Clear previous UI
+    errorDiv.style.display = 'none';
+    weatherContent.innerHTML = '<div>Loading...</div>';
+
+    try {
+        log('4a. Before fetchWeatherPromise() - sync code', 'sync');
+        log('4b. fetchWeatherPromise() called - promise created', 'promise');
+
+        const data = await fetchWeatherPromise(city);
+
+        log('6. Await finished - data available (microtask)', 'async');
+
+        showWeather(data);
+        saveHistory(city);
+    } catch (err) {
+        log(`7. Error caught in try...catch -> ${err.message}`, 'error');
+        showError('City Not Found');
+    } finally {
+        log('8. finally block after async work', 'sync');
+    }
+}
