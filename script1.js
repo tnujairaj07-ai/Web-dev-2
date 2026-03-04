@@ -146,3 +146,39 @@ function saveHistory(city) {
     showHistory(history);
     log(`Saved "${city}" to history`, 'sync');
 }
+
+ // Page load
+document.addEventListener('DOMContentLoaded', () =>  {         
+    log('0. Page loaded - DOM ready (global sync code)', 'sync');
+
+    loadHistory();
+
+    const searchBtn = document.getElementById('searchBtn');
+    const cityInput = document.getElementById('cityInput');
+
+    searchBtn.onclick = () => {
+        const city = cityInput.value.trim();
+        if (!city) {
+            showError('City Not Found');
+            log('Empty input - showing error immediately', 'error');
+            return;
+        }
+        cityInput.value = '';
+        searchWeather(city);
+    };
+
+    cityInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            searchBtn.click();
+        }
+    });
+
+    // Extra log to visualize event loop timing
+    setTimeout(() => {
+        log('setTimeout callback (task queue) after initial render', 'async');
+    }, 0);
+
+    Promise.resolve().then(() => {
+        log('Promise microtask after DOMContentLoaded', 'promise');
+    });
+});
