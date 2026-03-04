@@ -123,3 +123,26 @@ function showWeather(data) {
         </div>
     `;
 }
+ // Show error (City Not Found in red)
+function showError(msg) {
+    const errorDiv = document.getElementById('errorMsg');
+    if (!errorDiv) {
+        log('errorMsg element missing', 'error');
+        return;
+    }
+const weatherContent = document.getElementById('weatherContent');
+    if (weatherContent) weatherContent.innerHTML = '';
+    errorDiv.textContent = msg;
+    errorDiv.style.display = 'block';
+    log('10. Error displayed in Weather Info panel', 'error');
+}
+// Save to history
+function saveHistory(city) {
+    let history = JSON.parse(localStorage.getItem('cityHistory') || '[]');
+    history = history.filter(c => c.toLowerCase() !== city.toLowerCase());
+    history.push(city);
+    if (history.length > 10) history = history.slice(-10);
+    localStorage.setItem('cityHistory', JSON.stringify(history));
+    showHistory(history);
+    log(`Saved "${city}" to history`, 'sync');
+}
