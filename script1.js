@@ -92,3 +92,34 @@ async function searchWeather(city) {
         log('8. finally block after async work', 'sync');
     }
 }
+// Show weather data
+function showWeather(data) {
+    log('9. showWeather() - sync after async', 'sync');
+    const errorDiv = document.getElementById('errorMsg');
+    const weatherContent = document.getElementById('weatherContent');
+
+    errorDiv.style.display = 'none';
+
+    weatherContent.innerHTML = `
+        <div class="weather-item">
+            <span class="label">City:</span>
+            <span class="value">${data.name}, ${data.sys.country}</span>
+        </div>
+        <div class="weather-item">
+            <span class="label">Temperature:</span>
+            <span class="value">${Math.round(data.main.temp)}°C</span>
+        </div>
+        <div class="weather-item">
+            <span class="label">Weather:</span>
+            <span class="value">${data.weather[0].main}</span>
+        </div>
+        <div class="weather-item">
+            <span class="label">Humidity:</span>
+            <span class="value">${data.main.humidity}%</span>
+        </div>
+        <div class="weather-item">
+            <span class="label">Wind:</span>
+            <span class="value">${data.wind.speed} m/s</span>
+        </div>
+    `;
+}
