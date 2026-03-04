@@ -40,3 +40,12 @@ function showHistory(history) {
         list.appendChild(div);
     });
 }
+
+// Delete city from history
+function deleteCity(city) {
+    let history = JSON.parse(localStorage.getItem('cityHistory') || '[]');
+    history = history.filter(c => c !== city);
+    localStorage.setItem('cityHistory', JSON.stringify(history));
+    showHistory(history);
+    log(`Deleted ${city} from history`, 'sync');
+}
