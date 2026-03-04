@@ -49,3 +49,17 @@ function deleteCity(city) {
     showHistory(history);
     log(`Deleted ${city} from history`, 'sync');
 }
+
+// Promise-style wrapper around fetch (to demonstrate .then/.catch)
+function fetchWeatherPromise(city) {
+    log('4. fetchWeatherPromise() - promise executor start', 'promise');
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric`;
+    return fetch(url)
+        .then(response => {
+            log('5. fetch() resolved (then) - checking status', 'async');
+            if (!response.ok) {
+                throw new Error('City not found');
+            }
+            return response.json();
+        });
+}
